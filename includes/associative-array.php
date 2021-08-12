@@ -17,12 +17,6 @@ class Associative_array {
         $this->file_name = array(json_decode($json,true));
 
     }
-    //method to print associative array
-    public function getJson(){
-
-        print_r($this->file_name);
-
-    }
 
     //method to read data from csv file to associative array
     public function setcsv($file_name){
@@ -32,7 +26,7 @@ class Associative_array {
         
         //shifts the first value of the array off and returns it
         $header = array_shift($rows);
-        
+
         $this->file_name  = [];
 
         foreach($rows as $row) {
@@ -42,8 +36,21 @@ class Associative_array {
         }
     }
 
-    //method to print associative array
-    public function getcsv(){
+    //method to read data from xml file to associative array
+    public function setxml($file_name){
+
+        $xmlFileData = file_get_contents($file_name);
+
+        // string conversion into object
+        $xmlDataObject = simplexml_load_string($xmlFileData);
+
+        $jsonData  = json_encode($xmlDataObject);
+
+        $this->file_name = json_decode($jsonData, true);	
+    }
+    //prints associative array
+    public function print(){
+
         print_r($this->file_name);
     }
 

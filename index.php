@@ -12,11 +12,11 @@
 <body>
 <?php
     $array = new Associative_array("data.json"); 
-    // $array->setJson('data.json');
-    // $array->getJson();
+    $array->setJson('data.json');
+    // $array->setcsv('data.csv');
+    // $array->setxml('data.xml');
+    $array->print();
 
-    $array->setcsv('data.csv');
-    $array->getcsv();
 ?>
 </body>
 </html>
