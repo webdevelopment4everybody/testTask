@@ -23,4 +23,28 @@ class Associative_array {
         print_r($this->file_name);
 
     }
+
+    //method to read data from csv file to associative array
+    public function setcsv($file_name){
+
+        // return an array containing the fields read
+        $rows   = array_map('str_getcsv', file($file_name));
+        
+        //shifts the first value of the array off and returns it
+        $header = array_shift($rows);
+        
+        $this->file_name  = [];
+
+        foreach($rows as $row) {
+
+            $this->file_name[] = array_combine($header, $row);
+
+        }
+    }
+
+    //method to print associative array
+    public function getcsv(){
+        print_r($this->file_name);
+    }
+
 }
