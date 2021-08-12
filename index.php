@@ -1,5 +1,5 @@
 <?php
-    include 'includes/associative-array.php';
+  include 'includes/autoloader.inc.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,10 +11,16 @@
 </head>
 <body>
 <?php
+
     $array = new Associative_array("data.json"); 
-    $array->setJson('data.json');
-    // $array->setcsv('data.csv');
+
+    // test with json file 
+    $array->setJson('data.json'); 
+    // test with csv file 
+    // $array->setcsv('data.csv'); 
+    // test with xml file
     // $array->setxml('data.xml');
+
     $array->print();
 
 ?>
