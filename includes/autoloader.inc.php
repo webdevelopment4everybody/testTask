@@ -1,20 +1,18 @@
 <?php 
 
-  spl_autoload_register('myAutoLoader');
+    spl_autoload_register('myAutoLoader');
 
     //include classes files
-    function myAutoLoader($className) {
-
+    function myAutoLoader($className) 
+    {
         $path = "classes/";
 
         $extension = ".php";
 
         $fullPath = $path . $className . $extension;
 
-        if(!file_exists($fullPath)) {
-
+        if (!file_exists($fullPath)) {
             return false;
-
         }
 
         include_once $fullPath;

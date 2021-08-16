@@ -12,14 +12,14 @@
 <body>
 <?php
 
-    $array = new Associative_array("data.json"); 
+  $array = new Associative_Array("data.json"); 
 
     // test with json file 
     $array->setJson('data.json'); 
     // test with csv file 
-    // $array->setcsv('data.csv'); 
+    // $array->setCsv('data.csv'); 
     // test with xml file
-    // $array->setxml('data.xml');
+    // $array->setXml('data.xml');
 
     $array->print();
 
